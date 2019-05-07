@@ -17,6 +17,7 @@ source $HYSDS_DIR/bin/activate
 # install latest pip and setuptools
 pip install -U pip
 pip install -U setuptools
+pip install -U docker-compose
 
 
 # create etc directory
@@ -66,3 +67,7 @@ if [ "$?" -ne 0 ]; then
   echo "Failed to run 'pip install -e .' for $PACKAGE."
   exit 1
 fi
+
+# dump environment
+cd $HYSDS_DIR
+pip freeze > requirements.txt
