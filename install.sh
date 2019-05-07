@@ -112,11 +112,11 @@ fi
 
 
 ##########################################
-# export mozart puppet module
+# export hysds_cluster_node puppet module
 ##########################################
 
-git_loc="${git_url}/hysds/puppet-mozart"
-mod_dir=$mods_dir/mozart
+git_loc="${git_url}/hysds/puppet-hysds_cluster_node"
+mod_dir=$mods_dir/hysds_cluster_node
 site_pp=$mod_dir/site.pp
 
 # check that module is here; if not, export it

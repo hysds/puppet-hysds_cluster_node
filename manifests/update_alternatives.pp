@@ -1,4 +1,4 @@
-define mozart::update_alternatives ($path) {
+define hysds_cluster_node::update_alternatives ($path) {
   exec { "set-${name}":
     path => ["/bin", "/usr/bin", "/usr/sbin", "/sbin"],
     command => "update-alternatives --set ${name} ${path}",

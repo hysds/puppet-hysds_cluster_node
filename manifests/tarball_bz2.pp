@@ -1,4 +1,4 @@
-define mozart::tarball_bz2($pkg_tbz2=$title, $install_dir, $owner, $group) {
+define hysds_cluster_node::tarball_bz2($pkg_tbz2=$title, $install_dir, $owner, $group) {
 
   # create the install directory
   unless defined(File["$install_dir"]) {
@@ -13,7 +13,7 @@ define mozart::tarball_bz2($pkg_tbz2=$title, $install_dir, $owner, $group) {
   # download the tbz2 file
   file { "$pkg_tbz2":
     path    => "/tmp/$pkg_tbz2",
-    source  => "puppet:///modules/mozart/$pkg_tbz2",
+    source  => "puppet:///modules/hysds_cluster_node/$pkg_tbz2",
     notify  => Exec["untar $pkg_tbz2"],
   }
 

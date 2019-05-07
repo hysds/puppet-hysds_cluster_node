@@ -1,4 +1,4 @@
-define mozart::swap (
+define hysds_cluster_node::swap (
   $ensure   = 'present',
   $swapfile = $name,
   $swapsize = $::memorysize_mb

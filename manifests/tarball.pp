@@ -1,4 +1,4 @@
-define mozart::tarball($pkg_tgz=$title, $install_dir, $owner, $group) {
+define hysds_cluster_node::tarball($pkg_tgz=$title, $install_dir, $owner, $group) {
 
   # create the install directory
   unless defined(File["$install_dir"]) {
@@ -13,7 +13,7 @@ define mozart::tarball($pkg_tgz=$title, $install_dir, $owner, $group) {
   # download the tgz file
   file { "$pkg_tgz":
     path    => "/tmp/$pkg_tgz",
-    source  => "puppet:///modules/mozart/$pkg_tgz",
+    source  => "puppet:///modules/hysds_cluster_node/$pkg_tgz",
     notify  => Exec["untar $pkg_tgz"],
   }
 

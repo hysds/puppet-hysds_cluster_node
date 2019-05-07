@@ -1,4 +1,4 @@
-define mozart::es_plugin ($path) {
+define hysds_cluster_node::es_plugin ($path) {
   exec { "es-install-${name}":
     path => ["/usr/share/elasticsearch/bin", "/bin", "/usr/bin", "/usr/sbin", "/sbin"],
     command => "plugin --install ${path}",
