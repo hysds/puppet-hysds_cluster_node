@@ -129,4 +129,4 @@ fi
 # apply
 ##########################################
 
-FACTER_git_oauth_token=$GIT_OAUTH_TOKEN $puppet_cmd apply $site_pp
+$puppet_cmd apply $site_pp
