@@ -28,13 +28,6 @@ class hysds_cluster_node inherits scientific_python {
 
 
   #####################################################
-  # hysds directory
-  #####################################################
-
-  $hysds_dir = "/home/$user/hysds_env"
-
-
-  #####################################################
   # install packages
   #####################################################
 
@@ -115,33 +108,6 @@ class hysds_cluster_node inherits scientific_python {
     path    => ["/sbin", "/bin", "/usr/bin"],
     command => "/sbin/sysctl --system",
     require => File["/usr/lib/sysctl.d/redis.conf"],
-  }
-
-
-  #####################################################
-  # install install_hysds.sh script and other config
-  # files in ops home
-  #####################################################
-
-  file { "/home/$user/install_hysds.sh":
-    ensure  => present,
-    content => template('hysds_cluster_node/install_hysds.sh'),
-    owner   => $user,
-    group   => $group,
-    mode    => 0755,
-    require => User[$user],
-  }
-
-
-  file { ["$hysds_dir",
-          "$hysds_dir/bin",
-          "$hysds_dir/src",
-          "$hysds_dir/etc"]:
-    ensure  => directory,
-    owner   => $user,
-    group   => $group,
-    mode    => 0755,
-    require => User[$user],
   }
 
 
