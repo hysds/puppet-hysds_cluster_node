@@ -7,6 +7,4 @@ fi
 
 # misc
 umask 0022
-export LD_LIBRARY_PATH=<%= @conda_path %>/lib:/usr/lib:/usr/lib64:/usr/local/lib:$LD_LIBRARY_PATH
 export GIT_SSL_NO_VERIFY=true
-export PATH=<%= @conda_path %>/bin:$PATH
